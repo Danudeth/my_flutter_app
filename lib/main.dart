@@ -26,35 +26,22 @@ class MyApp extends StatelessWidget {
             leading: const Icon(Icons.add),
             backgroundColor: Colors.yellow,
           ),
-          body: Container(
-            color: Colors.grey,
-            child: Row(
-              children: [
-                // Expanded(
-                  // flex: 1,
-                  Container(
-                    color: Colors.blue,
-                    height: 100,
-                    width: 50,
-                  ),
-                // ),
-                Expanded(
-                  flex: 4,
-                  child: Container(
-                    color: Colors.red,
-                    height: 100,
-                  ),
-                ),
-              ],
-            ),
+          body: Center(
+            // child : Image.network('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSaXYTlyWcEBs-yQ_ll_j43p-ySqRizPFM0Q_nb1UNF-MZJEwFnXthK4HGv9fIuvUcNVKFZ2bzH1ESf-BPLBzE6B5IasTeJHxaf-lXkdw'),
+           child: Image.asset(
+            'assets/gojo.webp',
+            width: 300,
+           ),
+           // child: ElevatedButton(
+            //   onPressed: () {
+            //     print("Pressed");
+            //   },
+            //  child: Text("Press Me")
+            //  ),
           ),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {
+          floatingActionButton : FloatingActionButton(onPressed: (){
               print("Hello");
-            },
-            child: const Icon(Icons.phone),
-          ),
-          
+             })
         ));
   }
 }
