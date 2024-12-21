@@ -27,12 +27,38 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.yellow,
           ),
           body: Container(
-            color: Colors.orange,
-            width: 100,
-            height: 100,
-            padding: const EdgeInsets.all(20),
-            margin: const EdgeInsets.all(20),
-            child: Text("Hello"),
+            color: Colors.grey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              // mainAxisSize: MainAxisSize.max,
+              children: [
+                Container(
+                  color: Colors.red,
+                  width: 100,
+                  height: 200,
+                  padding: const EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
+                  child: Text("Item 1"),
+                ),
+                Container(
+                  color: Colors.orange,
+                  width: 100,
+                  height: 100,
+                  padding: const EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
+                  child: Text("Item 2"),
+                ),
+                Container(
+                  color: Colors.yellow,
+                  width: 100,
+                  height: 200,
+                  padding: const EdgeInsets.all(20),
+                  margin: const EdgeInsets.all(20),
+                  child: Text("Item 3"),
+                ),
+              ],
+          ),
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
@@ -40,6 +66,7 @@ class MyApp extends StatelessWidget {
             },
             child: const Icon(Icons.phone),
           ),
+          
         ));
   }
 }
