@@ -28,37 +28,25 @@ class MyApp extends StatelessWidget {
           ),
           body: Container(
             color: Colors.grey,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              // mainAxisSize: MainAxisSize.max,
+            child: Row(
               children: [
-                Container(
-                  color: Colors.red,
-                  width: 100,
-                  height: 200,
-                  padding: const EdgeInsets.all(20),
-                  margin: const EdgeInsets.all(20),
-                  child: Text("Item 1"),
-                ),
-                Container(
-                  color: Colors.orange,
-                  width: 100,
-                  height: 100,
-                  padding: const EdgeInsets.all(20),
-                  margin: const EdgeInsets.all(20),
-                  child: Text("Item 2"),
-                ),
-                Container(
-                  color: Colors.yellow,
-                  width: 100,
-                  height: 200,
-                  padding: const EdgeInsets.all(20),
-                  margin: const EdgeInsets.all(20),
-                  child: Text("Item 3"),
+                // Expanded(
+                  // flex: 1,
+                  Container(
+                    color: Colors.blue,
+                    height: 100,
+                    width: 50,
+                  ),
+                // ),
+                Expanded(
+                  flex: 4,
+                  child: Container(
+                    color: Colors.red,
+                    height: 100,
+                  ),
                 ),
               ],
-          ),
+            ),
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
