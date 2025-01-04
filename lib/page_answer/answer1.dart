@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Answer1());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Answer1 extends StatelessWidget {
+  const Answer1({super.key});
 
   // This widget is the root of your application.
   @override
@@ -20,12 +20,23 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
           appBar: AppBar(
             title: const Text('Grid Layout'),
+            leading: ElevatedButton(onPressed: (){
+              Navigator.pop(context);
+            }, style: TextButton.styleFrom(
+              backgroundColor: Colors.transparent,
+              shadowColor: Colors.transparent,
+              padding: EdgeInsets.zero,
+              iconColor: Colors.black,
+            ),
+            child: Icon(Icons.arrow_back_ios_new_rounded)),
             backgroundColor: Colors.orange,
           ),
           body: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(width: 20, height: 20),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(width: 20, height: 20),
                   Container(
@@ -50,6 +61,7 @@ class MyApp extends StatelessWidget {
               ),
               SizedBox(width: 20, height: 20),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(width: 20, height: 20),
                   Container(
