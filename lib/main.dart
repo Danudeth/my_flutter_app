@@ -20,28 +20,28 @@ class MyApp extends StatelessWidget {
         ),
         home: Scaffold(
           appBar: AppBar(
-            title:
-                const Text('Flutter Demo', 
-                style: TextStyle(color: Colors.red)),
-            leading: const Icon(Icons.add),
+            title: const Text('Flutter Demo'), 
             backgroundColor: Colors.yellow,
           ),
-          body: Center(
-            // child : Image.network('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSaXYTlyWcEBs-yQ_ll_j43p-ySqRizPFM0Q_nb1UNF-MZJEwFnXthK4HGv9fIuvUcNVKFZ2bzH1ESf-BPLBzE6B5IasTeJHxaf-lXkdw'),
-           child: Image.asset(
-            'assets/gojo.webp',
-            width: 300,
-           ),
-           // child: ElevatedButton(
-            //   onPressed: () {
-            //     print("Pressed");
-            //   },
-            //  child: Text("Press Me")
-            //  ),
-          ),
-          floatingActionButton : FloatingActionButton(onPressed: (){
-              print("Hello");
-             })
+        body: ListView(
+          children: [
+            Container(
+              height: 300,
+              width: double.infinity,
+              color: Colors.red,
+            ),
+            Container(
+              height: 300,
+              width: double.infinity,
+              color: Colors.blue,
+            ),
+            Container(
+              height: 300,
+              width: double.infinity,
+              color: Colors.green,
+            ),
+          ],
+        ),
         ));
   }
 }
