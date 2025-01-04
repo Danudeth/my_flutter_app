@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_flutter_app/first_page.dart';
 import 'package:my_flutter_app/homepage.dart';
 
 void main() {
@@ -33,45 +34,14 @@ class _MyWidgetState extends State<MyWidget> {
   int counter = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Stateful Widget Example'),
-        backgroundColor: Colors.red,
+    return MaterialApp(
+      title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("Counter Value:"),
-            Text('$counter',style: TextStyle(fontSize: 40)),
-            const SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(onPressed: (){
-                  setState(() {
-                    counter++;
-                  });
-                }, child: Icon(Icons.add)),
-                SizedBox(width: 10),
-                ElevatedButton(onPressed: (){
-                  setState(() {
-                    counter--;
-                    if(counter<0) counter=0;
-                  });
-                }, child: Icon(Icons.remove)),
-                SizedBox(width: 10),
-                ElevatedButton(onPressed: (){
-                  setState(() {
-                    counter=0;
-                  });
-                }, child: Icon(Icons.restart_alt)),
-              ],
-            )
-          ],
-        ),
-      ),
-    );
+      home: FirstPage());
   }
 }
 
