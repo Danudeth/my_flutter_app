@@ -35,14 +35,15 @@ class _MyWidgetState extends State<MyWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Demo App'),
+        title: const Text('Stateful Widget Example'),
         backgroundColor: Colors.red,
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Counter = $counter"),
+            Text("Counter Value:"),
+            Text('$counter',style: TextStyle(fontSize: 40)),
             const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -56,8 +57,15 @@ class _MyWidgetState extends State<MyWidget> {
                 ElevatedButton(onPressed: (){
                   setState(() {
                     counter--;
+                    if(counter<0) counter=0;
                   });
                 }, child: Icon(Icons.remove)),
+                SizedBox(width: 10),
+                ElevatedButton(onPressed: (){
+                  setState(() {
+                    counter=0;
+                  });
+                }, child: Icon(Icons.restart_alt)),
               ],
             )
           ],
