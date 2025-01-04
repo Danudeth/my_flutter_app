@@ -18,23 +18,69 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Flutter Demo'), 
-            backgroundColor: Colors.yellow,
-          ),
-        body: ListView(
-          padding: const EdgeInsets.all(10),
-          scrollDirection: Axis.horizontal,
-          shrinkWrap: true,
-          reverse: true,
+        home: const MyWidget());
+  }
+}
+
+class MyWidget extends StatefulWidget {
+  const MyWidget({super.key});
+
+  @override
+  State<MyWidget> createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<MyWidget> {
+  int counter = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Demo App'),
+        backgroundColor: Colors.red,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(width: 300, color: Colors.red),
-            Container(width: 300, color: Colors.blue),
-            Container(width: 300, color: Colors.green),
-            Container(width: 300, color: Colors.yellow),
+            Text("Counter = $counter"),
+            const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(onPressed: (){
+                  setState(() {
+                    counter++;
+                  });
+                }, child: Icon(Icons.add)),
+                SizedBox(width: 10),
+                ElevatedButton(onPressed: (){
+                  setState(() {
+                    counter--;
+                  });
+                }, child: Icon(Icons.remove)),
+              ],
+            )
           ],
         ),
-        ));
+      ),
+    );
+  }
+}
+
+class GreetingWidget extends StatelessWidget {
+  final String name;
+  const GreetingWidget({super.key, required this.name});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Demo App'),
+        backgroundColor: Colors.red,
+      ),
+        body: Center(
+            child: Text(
+      'Hello, $name',
+      style: const TextStyle(fontSize: 24),
+    )));
   }
 }
