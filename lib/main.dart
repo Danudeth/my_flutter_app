@@ -23,21 +23,17 @@ class MyApp extends StatelessWidget {
             title: const Text('Flutter Demo'), 
             backgroundColor: Colors.yellow,
           ),
-        body: ListView.separated(
-          itemCount: 20,
-          itemBuilder: (context, index) {
-            return ListTile(
-              leading: const Icon(Icons.add),
-              title: Text('Item $index'),
-              subtitle: Text('abcdefg'),
-              trailing: const Icon(Icons.person),
-            );
-          },
-          separatorBuilder: (context, index) {
-            return const Divider(
-              thickness: 2,
-            );
-          },
+        body: ListView(
+          padding: const EdgeInsets.all(10),
+          scrollDirection: Axis.horizontal,
+          shrinkWrap: true,
+          reverse: true,
+          children: [
+            Container(width: 300, color: Colors.red),
+            Container(width: 300, color: Colors.blue),
+            Container(width: 300, color: Colors.green),
+            Container(width: 300, color: Colors.yellow),
+          ],
         ),
         ));
   }
